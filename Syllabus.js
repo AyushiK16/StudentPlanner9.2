@@ -1,8 +1,9 @@
 class Syllabus{
     constructor(){
 
-        this.input1 = createInput("Subject" + rollNo);
+        this.input1 = createInput("Subject Name" );
         this.inputDetail1 = createInput("Enter the details");
+        //this.subjectNumberInput = createInput("Enter subject number (default is 1 and so on)")
         //this.inputExtra1 = createInput("Add anything extra here, such as exam dates, important information, etx");
 
         this.greeting = createElement('h4');
@@ -24,16 +25,6 @@ class Syllabus{
 
         this.x2 = createElement('h2');
 
-
-
-        
-        this.state = {
-            subject1 : "",
-            subject2 : "",
-            subject3 : "",
-            subject4 : "",
-            subject5 : ""
-        }
 
     }
     
@@ -70,27 +61,28 @@ class Syllabus{
             image(syllabusImage, displayWidth/4  +100 ,displayHeight - displayHeight, displayWidth - 800, displayHeight - 150);
 
             this.readSyllabus2();
-            this.updateNoOfSubjects();
-            this.readNoOfSubjects();
+            //this.updateNoOfSubjects();
+            //this.readNoOfSubjects();
 
             this.input1.position(displayWidth/2 - 40, displayHeight/4);
             this.inputDetail1.position(displayWidth/2 - 40, displayHeight/4 + 30)
             //this.inputExtra1.position(displayWidth/2 - 40, displayHeight/4 + 60);
 
-            this.enterSyllabus.show();
-            this.enterSyllabus.show()
-
+            
             this.input1.show();
             this.inputDetail1.show();
-            this.doneSyllabus.show();
             this.enterSyllabus.show();
+
+            //this.doneSyllabus.show();
             //this.inputExtra1.show();
             
             this.syllabusButton.hide();
             toDoPage.hide();
             toDoPage.show();
+
             reminderPage.hide();
             reminderPage.show();
+
             breakPage.hide();
             breakPage.show();
 
@@ -101,63 +93,80 @@ class Syllabus{
         
 
         this.enterSyllabus.mousePressed(()=>{
-            
-            console.log("yay!")
             if(rollNo <=6){
+                
                 this.updateSyllabus();
+                //this.readRollNo();
+                
                 
                 //this.readRollNo();
                 //this.updateRollNo();
 
-                console.log(rollNo)
+                //console.log("read - ", rollNo)
                 
-            rollNo = rollNo + 1;
-            indexNo = rollNo;
+            
+            //this.updateRollNo();
+            //indexNo = 0;
+
+            this.readTry2();
+            if(rollNo === null){
+                rollNo = 1;
+            }
+            
+            //rollNo = indexNo;
+            console.log("read", rollNo);
+
+            //this.readRollNo();
+            //indexNo = rollNo;
             //console.log(rollNo)
-            newIndex = newIndex + 1;
+            //newIndex = newIndex + 1;
             //this.readNoOfSubjects();
-            indexNo = indexNo + 1;
+            //indexNo = indexNo + 1;
             //this.updateNoOfSubjects();
 
-            console.log(rollNo)
+            //console.log(rollNo)
             this.syllabusText.html("Check the dashboard to see your syllabus!" );
             this.syllabusText.show();
 
-            if(rollNo === 2 && rollNo >= indexNo){
+            if(rollNo === 1 ){
                 subjectName1 = this.input1.value()
                 subjectDetail1 = this.inputDetail1.value();
-                console.log()
+                console.log("inside if 1",rollNo)
+                //rollNo = rollNo + 1;
+
                 //this.x2.html(subjectName1);
             }
 
-            if(rollNo === 3 && rollNo > indexNo){
+            if(rollNo === 2 ){
                 subjectName2 = this.input1.value()
                 subjectDetail2 = this.inputDetail1.value();
+                
                 //this.x2.html(subjectName1);
             }
 
 
-            if(rollNo === 4 && rollNo > indexNo){
+            if(rollNo === 3 ){
                 subjectName3 = this.input1.value()
                 subjectDetail3 = this.inputDetail1.value();
+                
                 //this.x2.html(subjectName1);
             }
 
 
-            if(rollNo === 5 && rollNo > indexNo){
+            if(rollNo === 4 ){
                 subjectName4 = this.input1.value()
                 subjectDetail4 = this.inputDetail1.value();
                 //this.x2.html(subjectName1);
             }
 
 
-            if(rollNo === 6 && rollNo > indexNo){
+            if(rollNo === 5 ){
                 subjectName5 = this.input1.value()
                 subjectDetail5 = this.inputDetail1.value();
                 //this.x2.html(subjectName1);
             }
 
-            if(rollNo === 7 && rollNo > indexNo){
+            if(rollNo === 6){
                 subjectName6 = this.input1.value()
                 subjectDetail6 = this.inputDetail1.value();
                 //this.x2.html(subjectName1);
@@ -165,6 +174,13 @@ class Syllabus{
 
             this.greeting.html("Enter For The Next Subject");
             this.greeting.show();
+
+            rollNo = rollNo + 1;
+            indexNo = rollNo
+            this.updateTry2();
+
+            
+            console.log("updated", rollNo);
 
             //var nameX = this.input1.value();
             //append(array1, nameX)
@@ -177,13 +193,13 @@ class Syllabus{
            // var finalDetails = this.inputDetail1.value();
 
             //this.try1.html(finalName);
-            for(var i = 0;i <= newIndex; i++){
+            //for(var i = 0;i <= newIndex; i++){
                 //var v = document.createElement('input1');
                 //document.getElementById('array1').appendChild(v);
 
                 //this.try1.html(array1[i]);
                 //console.log(array1[i])
-            }
+            //}
 
             //TO HERE
 
@@ -235,10 +251,10 @@ class Syllabus{
             "Details" : this.inputDetail1.value()
         })
         //ADDED THIS PART
-        var dbRef2 = database.ref('Username/User/' + username + '/Pages/Syllabus/');
-        dbRef2.update({
-            "RollNo" : indexNo
-        })
+        //var dbRef2 = database.ref('Username/User/' + username + '/Pages/Syllabus/');
+        //dbRef2.update({
+           // "RollNo" : indexNo
+        //})
     }
 
     readSyllabus(){
@@ -379,6 +395,23 @@ class Syllabus{
         dbRef.on("value", function(data){
             rollNo = data.val();
         })  
+    }
+
+    updateTry2(){
+        var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/');
+        dbRef.update({
+            "RollNo" : indexNo
+        })
+        //indexNo = indexNo - 1
+    }
+
+    readTry2(){
+        var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/RollNo');
+        dbRef.on("value", function(data){
+            //indexNo = data.val();
+            rollNo = data.val();
+        })  
+
     }
 
     

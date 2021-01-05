@@ -323,7 +323,7 @@ class ToDoList{
 
 
     updateToDoList(){
-        var dbRef = database.ref('ToDoList/Entry' + mouseNo);
+        var dbRef = database.ref('Username/User/' + username + '/Pages/ToDoList/Entry' + mouseNo);
         dbRef.update({
             "Activity" : this.input1.value(),
             "Date" : this.dateInput1.value()

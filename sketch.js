@@ -68,6 +68,8 @@ var loginNumber = 1;
 var checkPass;
 var isLoggedIn = false;
 
+var username;
+
 
 
 
@@ -130,6 +132,8 @@ function draw() {
 
   //background("black");  
 
+  
+
   /*
   firstButton.display();
   dashboardImage.resize(800,0);
@@ -152,9 +156,9 @@ function draw() {
     if(isReminder !== 1){
       input = createFileInput(handleFile);
       input.hide();
-      console.log(isReminder)
+      //console.log(isReminder)
     }
-    console.log(isReminder)
+    //console.log(isReminder)
 
   reminderPage.display();
   toDoPage.display();

@@ -15,6 +15,8 @@
 
 <script>
 // Your web app's Firebase configuration
+
+
 var firebaseConfig = {
   apiKey: "AIzaSyCSXRqZXtXDMrifIHfsp7M9xyHo6nkFmPM",
   authDomain: "trial-planner-db.firebaseapp.com",
@@ -26,6 +28,37 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+
+/*
+(function(){
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyCSXRqZXtXDMrifIHfsp7M9xyHo6nkFmPM",
+    authDomain: "trial-planner-db.firebaseapp.com",
+    databaseURL: "https://trial-planner-db.firebaseio.com",
+    projectId: "trial-planner-db",
+    storageBucket: "trial-planner-db.appspot.com",
+    messagingSenderId: "823714203363",
+    appId: "1:823714203363:web:53ced33cbdab3be7a7e7d6"
+};
+firebase.initializeApp(config);
+
+var userDataRef = firebase.database().ref("Username/User/Enter the username/Pages/Syllabus/Subject1").orderByKey();
+userDataRef.once("value")
+  .then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var key = childSnapshot.key;
+      var childData = childSnapshot.val();              // childData will be the actual contents of the child
+
+      var name_val = childSnapshot.val().Name;
+      var id_val = childSnapshot.val().Details;
+      $("#name").append(name_val);
+       $("#details").append(details_val);
+  });
+ });
+}());
+*/
 
 
 

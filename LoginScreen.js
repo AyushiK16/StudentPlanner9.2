@@ -38,10 +38,14 @@ class LoginScreen{
             if(checkPass === this.password.value()){
                 console.log("hello");
                 loginPage.hide();    
-                isLoggedIn = true;          
+                isLoggedIn = true;    
+                username = this.userIdInput.value();
+
             }
             else{
                 isLoggedIn = false;
+                //this.greeting.html("The password entered is wrong.");
+        
             }
         })
 

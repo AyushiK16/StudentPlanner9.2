@@ -67,13 +67,11 @@ class Syllabus{
 
         this.syllabusButton.mousePressed(()=>{
             //image(syllabusImage, 0,-displayHeight*4,displayWidth, displayHeight*5);
-            //image(syllabusImage, displayWidth/4  +100 ,displayHeight - displayHeight, displayWidth - 800, displayHeight - 150);
-            //image(syllabusImage, displayWidth/4  +100 ,displayHeight - displayHeight, displayWidth - 800, displayHeight - 150);
-            image(syllabusImage, displayWidth/2 ,displayHeight/2, displayWidth, displayHeight);
+            image(syllabusImage, displayWidth/4  +100 ,displayHeight - displayHeight, displayWidth - 800, displayHeight - 150);
 
-
-            this.readSyllabus();
-            //this.read2();
+            this.readSyllabus2();
+            this.updateNoOfSubjects();
+            this.readNoOfSubjects();
 
             this.input1.position(displayWidth/2 - 40, displayHeight/4);
             this.inputDetail1.position(displayWidth/2 - 40, displayHeight/4 + 30)
@@ -108,47 +106,58 @@ class Syllabus{
             if(rollNo <=6){
                 this.updateSyllabus();
                 
+                //this.readRollNo();
+                //this.updateRollNo();
+
+                console.log(rollNo)
+                
             rollNo = rollNo + 1;
+            indexNo = rollNo;
+            //console.log(rollNo)
             newIndex = newIndex + 1;
+            //this.readNoOfSubjects();
+            indexNo = indexNo + 1;
+            //this.updateNoOfSubjects();
+
             console.log(rollNo)
             this.syllabusText.html("Check the dashboard to see your syllabus!" );
             this.syllabusText.show();
 
-            if(rollNo === 2){
+            if(rollNo === 2 && rollNo >= indexNo){
                 subjectName1 = this.input1.value()
                 subjectDetail1 = this.inputDetail1.value();
                 console.log()
                 //this.x2.html(subjectName1);
             }
 
-            if(rollNo === 3){
+            if(rollNo === 3 && rollNo > indexNo){
                 subjectName2 = this.input1.value()
                 subjectDetail2 = this.inputDetail1.value();
                 //this.x2.html(subjectName1);
             }
 
 
-            if(rollNo === 4){
+            if(rollNo === 4 && rollNo > indexNo){
                 subjectName3 = this.input1.value()
                 subjectDetail3 = this.inputDetail1.value();
                 //this.x2.html(subjectName1);
             }
 
 
-            if(rollNo === 5){
+            if(rollNo === 5 && rollNo > indexNo){
                 subjectName4 = this.input1.value()
                 subjectDetail4 = this.inputDetail1.value();
                 //this.x2.html(subjectName1);
             }
 
 
-            if(rollNo === 6){
+            if(rollNo === 6 && rollNo > indexNo){
                 subjectName5 = this.input1.value()
                 subjectDetail5 = this.inputDetail1.value();
                 //this.x2.html(subjectName1);
             }
 
-            if(rollNo === 7){
+            if(rollNo === 7 && rollNo > indexNo){
                 subjectName6 = this.input1.value()
                 subjectDetail6 = this.inputDetail1.value();
                 //this.x2.html(subjectName1);
@@ -225,45 +234,159 @@ class Syllabus{
             "Name" : this.input1.value(),
             "Details" : this.inputDetail1.value()
         })
-
-
-        
+        //ADDED THIS PART
+        var dbRef2 = database.ref('Username/User/' + username + '/Pages/Syllabus/');
+        dbRef2.update({
+            "RollNo" : indexNo
+        })
     }
 
     readSyllabus(){
-        console.log("reading syllabus")
-        //for(var x = 1; x <= rollNo; x ++){
-            var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject1/Name');
-            dbRef.on("value", function(data){
-            //if(x === 1){
-                subjectName1 : data.val();
-                //subjectDetail1 : data.val();
-                console.log(subjectName1);
-            //}
-        })
-        //}
-    }
-
-    read2(){
         var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject1/Name');
         dbRef.on("value", function(data){
-            subjectName1 : data.val()
+            subjectName1 = data.val();
             console.log(subjectName1)
         })
+        //ADDED THIS PART
+        var dbRef2 = database.ref('Username/User/' + username + '/Pages/Syllabus/RollNo');
+        dbRef2.on("value", function(data){
+            indexNo = data.val();
+        })
+
     }
 
-    
+    readSyllabus2(){
+        var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/RollNo');
+        dbRef.on("value", function(data){
+            indexNo = data.val();
+        })
 
-    
+        for(var x = 1; x <= 6; x ++){
+            if(x === 1){
+                var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject1/Name');
+                dbRef.on("value", function(data){
+                subjectName1 = data.val();
+                //console.log(subjectName1)
+                })    
 
-        /*
-        updateNoOfSubjects(){
+                var dbRef2 = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject1/Details');
+                dbRef2.on("value", function(data){
+                    subjectDetail1 = data.val();
+                    //console.log(subjectName1)
+                    })  
+            }
+
+            if(x === 2){
+                var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject2/Name');
+                dbRef.on("value", function(data){
+                subjectName2 = data.val();
+                //console.log(subjectName1)
+                })    
+
+                var dbRef2 = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject2/Details');
+                dbRef2.on("value", function(data){
+                    subjectDetail2 = data.val();
+                    
+                    })  
+            }
+
+            if(x === 3){
+                var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject3/Name');
+                dbRef.on("value", function(data){
+                subjectName3 = data.val();
+                
+                })    
+
+                var dbRef2 = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject3/Details');
+                dbRef2.on("value", function(data){
+                    subjectDetail3 = data.val();
+                    
+                    })  
+            }
+
+            if(x === 4){
+                var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject4/Name');
+                dbRef.on("value", function(data){
+                subjectName4 = data.val();
+                
+                })    
+
+                var dbRef2 = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject4/Details');
+                dbRef2.on("value", function(data){
+                    subjectDetail4 = data.val();
+                    
+                    })  
+            }
+
+            if(x === 5){
+                var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject5/Name');
+                dbRef.on("value", function(data){
+                subjectName5 = data.val();
+                
+                })    
+
+                var dbRef2 = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject5/Details');
+                dbRef2.on("value", function(data){
+                    subjectDetail5 = data.val();
+                    
+                    })  
+            }
+
+            if(x === 6){
+                var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject6/Name');
+                dbRef.on("value", function(data){
+                subjectName6 = data.val();
+                
+                })    
+
+                var dbRef2 = database.ref('Username/User/' + username + '/Pages/Syllabus/Subject6/Details');
+                dbRef2.on("value", function(data){
+                    subjectDetail6 = data.val();
+                    
+                    })  
+            }
+            
+
+        }
+        
+
+    }
+
+    updateNoOfSubjects(){
         var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/');
         dbRef.update({
-            "SubjectNumber" : rollNo
+            "SubjectNumber" : indexNo
         })
     }
-        writeSyllabus(){}
+
+    readNoOfSubjects(){
+        var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/SubjectNumber');
+        dbRef.on("value", function(data){
+            indexNo = data.val();
+        })  
+
+    }
+
+    updateRollNo(){
+        var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/');
+        dbRef.update({
+            "RollNo" : rollNo
+        })
+    }
+    
+    readRollNo(){
+        var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/');
+        dbRef.on("value", function(data){
+            rollNo = data.val();
+        })  
+    }
+
+    
+
+    
+
+    writeSyllabus(){}
+        /*
         for(var i=0 ; i<=rollNo ; i++){
             var dbRef = database.ref('Syllabus/Subject' + i);
             dbRef.on("value", function(data){

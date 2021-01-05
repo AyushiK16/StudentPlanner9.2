@@ -70,6 +70,8 @@ var isLoggedIn = false;
 
 var username;
 
+var indexNo = null;
+
 
 
 
@@ -132,7 +134,7 @@ function draw() {
 
   //background("black");  
 
-  
+
 
   /*
   firstButton.display();

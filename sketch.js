@@ -70,6 +70,8 @@ var isLoggedIn = false;
 
 var username;
 
+var indexNo = 0;
+
 
 
 
@@ -123,6 +125,8 @@ function setup() {
   trexImg.visible = false;
   mazeImg.visible = false;
 
+  
+
 }
 
 function draw() {
@@ -132,7 +136,7 @@ function draw() {
 
   //background("black");  
 
-  
+
 
   /*
   firstButton.display();
@@ -150,8 +154,13 @@ function draw() {
   //syllabusPage.readDropbox();
   //syllabusPage.checkOptions();
 
+  if(isLoggedIn === false){
+    tryToRead();
+  }
+
 
   if(isLoggedIn === true){
+    
     //input = createFileInput(handleFile);
     if(isReminder !== 1){
       input = createFileInput(handleFile);
@@ -207,6 +216,14 @@ function handleFile(file) {
         img = null;
       }
    // }
+}
+
+function tryToRead(){
+  var dbRef = database.ref('Username/User/' + username + '/Pages/Syllabus/');
+  dbRef.update({
+    "RollNo" : 1
+  }) 
+
 }
 
 

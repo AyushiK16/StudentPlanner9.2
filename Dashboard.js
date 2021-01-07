@@ -67,7 +67,7 @@ display(){
                 this.det1.html(subjectDetail1);
                 this.sub1.show();
                 this.det1.show();
-                console.log("inside sub 1 not undefined")
+                //console.log("inside sub 1 not undefined")
             }
            
 
@@ -76,7 +76,7 @@ display(){
                 this.det2.html(subjectDetail2);
                 this.sub2.show();
                 this.det2.show();
-                console.log("inside sub 1 not undefined")
+                //console.log("inside sub 1 not undefined")
             }
             
 
@@ -85,7 +85,7 @@ display(){
                 this.det3.html(subjectDetail3);
                 this.sub3.show();
                 this.det3.show();
-                console.log("inside sub 1 not undefined")
+                //console.log("inside sub 1 not undefined")
             }
            
 
@@ -94,7 +94,7 @@ display(){
                 this.det4.html(subjectDetail4);
                 this.sub4.show();
                 this.det4.show();
-                console.log("inside sub 1 not undefined")
+                //console.log("inside sub 1 not undefined")
             }
             
 
@@ -103,7 +103,7 @@ display(){
                 this.det5.html(subjectDetail5);
                 this.sub5.show();
                 this.det5.show();
-                console.log("inside sub 1 not undefined")
+                //console.log("inside sub 1 not undefined")
               }
 
             if(subjectName6 !== null){
@@ -111,7 +111,7 @@ display(){
                 this.det6.html(subjectDetail6);
                 this.sub6.show();
                 this.det6.show();
-                console.log("inside sub 1 not undefined")
+                //console.log("inside sub 1 not undefined")
             }
       
         

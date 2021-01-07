@@ -105,6 +105,78 @@ class ToDoList{
             this.dateInput1.show();
             this.input1.show();
 
+            
+
+            if(tod1 !== null){
+                this.act1.html(tod1);
+                this.date1.html(toDate1);
+                this.act1.show();
+                this.date1.show();
+            }
+
+            if(tod2 !== null){
+                this.act2.html(tod2);
+                this.date2.html(toDate2);
+                this.act2.show();
+                this.date2.show();
+            }
+
+            if(tod3 !== null){
+                this.act3.html(tod3);
+                this.date3.html(toDate3);
+                this.act3.show();
+                this.date3.show();
+            }
+
+            if(tod4 !== null){
+                this.act4.html(tod4);
+                this.date4.html(toDate4);
+                this.act4.show();
+                this.date4.show();
+            }
+            
+            if(tod5 !== null){
+                this.act5.html(tod5);
+                this.date5.html(toDate5);
+                this.act5.show();
+                this.date5.show();
+            }
+
+            if(tod6 !== null){
+                this.act6.html(tod6);
+                this.date6.html(toDate6);
+                this.act6.show();
+                this.date6.show();
+            }
+
+            if(tod7 !== null){
+                this.act7.html(tod7);
+                this.date7.html(toDate7);
+                this.act7.show();
+                this.date7.show();
+            }
+
+            if(tod8 !== null){
+                this.act8.html(tod8);
+                this.date8.html(toDate8);
+                this.act8.show();
+                this.date8.show();
+            }
+
+            if(tod9 !== null){
+                this.act9.html(tod9);
+                this.date9.html(toDate9);
+                this.act9.show();
+                this.date9.show();
+            }
+
+            if(tod10 !== null){
+                this.act10.html(tod10);
+                this.date10.html(toDate10);
+                this.act10.show();
+                this.date10.show();
+            }
+
             this.act1.show();
             this.act2.show();
             this.act3.show();
@@ -127,6 +199,8 @@ class ToDoList{
             this.date9.show();
             this.date10.show();
 
+            
+
 
             this.saveButton.mousePressed(()=>{
                 if(y<580){
@@ -145,6 +219,7 @@ class ToDoList{
 
                     //boxName.position(displayWidth/2 - 135, y);
                     
+                    
 
                     this.dateInput.position(displayWidth/2 - 135, y);
                     //this.input1 = createInput("Enter what to do here");
@@ -161,15 +236,18 @@ class ToDoList{
                     this.dateInput.show();
                     this.input.show()
 
+                    determinerNumber = mouseNo
+
+                    
                     
 
                     if(mouseNo === 1){
                         tod1 = this.input.value();
                         toDate1 = this.dateInput.value(); 
-                        this.act1.html(tod1);
-                        this.date1.html(toDate1);
-                        this.act1.show();
-                        this.date1.show();
+                        //this.act1.html(tod1);
+                        //this.date1.html(toDate1);
+                        //this.act1.show();
+                        //this.date1.show();
                         y = 220;
                         console.log(mouseNo,y)
                     }
@@ -178,10 +256,10 @@ class ToDoList{
                         y = 260;
                         tod2 = this.input.value();
                         toDate2 = this.dateInput.value(); 
-                        this.act2.html(tod2);
-                        this.date2.html(toDate2);
-                        this.act2.show();
-                        this.date2.show();
+                        //this.act2.html(tod2);
+                        //this.date2.html(toDate2);
+                        //this.act2.show();
+                        //this.date2.show();
                         
                         console.log(mouseNo,y)
                     }
@@ -190,10 +268,12 @@ class ToDoList{
                         y = 300;
                         tod3 = this.input.value();
                         toDate3 = this.dateInput.value(); 
+                        /*
                         this.act3.html(tod3);
                         this.date3.html(toDate3);
                         this.act3.show();
                         this.date3.show();
+                        */
                         
                         console.log(mouseNo,y)
                     }
@@ -202,10 +282,7 @@ class ToDoList{
                         y = 340;
                         tod4 = this.input.value();
                         toDate4 = this.dateInput.value(); 
-                        this.act4.html(tod4);
-                        this.date4.html(toDate4);
-                        this.act4.show();
-                        this.date4.show();
+                        
                         
                         console.log(mouseNo,y)
                     }
@@ -213,10 +290,7 @@ class ToDoList{
                     if(mouseNo === 5){
                         tod5 = this.input.value();
                         toDate5 = this.dateInput.value(); 
-                        this.act5.html(tod5);
-                        this.date5.html(toDate5);
-                        this.act5.show();
-                        this.date5.show();
+                       
                         y = 380;
                         console.log(mouseNo,y)
                     }
@@ -224,20 +298,14 @@ class ToDoList{
                     if(mouseNo === 6){
                         tod6 = this.input.value();
                         toDate6 = this.dateInput.value(); 
-                        this.act6.html(tod6);
-                        this.date6.html(toDate6);
-                        this.act6.show();
-                        this.date6.show();
+                       
                         y = 420;
                     }
 
                     if(mouseNo === 7){
                         tod7 = this.input.value();
                         toDate7 = this.dateInput.value(); 
-                        this.act7.html(tod7);
-                        this.date7.html(toDate7);
-                        this.act7.show();
-                        this.date7.show();
+                      
                         y = 460;
                         console.log(mouseNo,y)
                     }
@@ -245,10 +313,7 @@ class ToDoList{
                     if(mouseNo === 8){
                         tod8 = this.input.value();
                         toDate8 = this.dateInput.value(); 
-                        this.act8.html(tod8);
-                        this.date8.html(toDate8);
-                        this.act8.show();
-                        this.date8.show();
+                        
                         y = 500;
                         console.log(mouseNo,y)
                     }
@@ -256,10 +321,7 @@ class ToDoList{
                     if(mouseNo === 9){
                         tod9 = this.input.value();
                         toDate9 = this.dateInput.value(); 
-                        this.act9.html(tod9);
-                        this.date9.html(toDate9);
-                        this.act9.show();
-                        this.date9.show();
+                     
                         y = 540;
                         console.log(mouseNo,y)
                     }
@@ -267,13 +329,88 @@ class ToDoList{
                     if(mouseNo === 10){
                         tod10 = this.input.value();
                         toDate10 = this.dateInput.value(); 
+                       
+                        y = 580;
+                        console.log(mouseNo,y)
+                    }
+
+                    if(tod1 !== null){
+                        this.act1.html(tod1);
+                        this.date1.html(toDate1);
+                        this.act1.show();
+                        this.date1.show();
+                    }
+        
+                    if(tod2 !== null){
+                        this.act2.html(tod2);
+                        this.date2.html(toDate2);
+                        this.act2.show();
+                        this.date2.show();
+                    }
+        
+                    if(tod3 !== null){
+                        this.act3.html(tod3);
+                        this.date3.html(toDate3);
+                        this.act3.show();
+                        this.date3.show();
+                    }
+        
+                    if(tod4 !== null){
+                        this.act4.html(tod4);
+                        this.date4.html(toDate4);
+                        this.act4.show();
+                        this.date4.show();
+                    }
+                    
+                    if(tod5 !== null){
+                        this.act5.html(tod5);
+                        this.date5.html(toDate5);
+                        this.act5.show();
+                        this.date5.show();
+                    }
+        
+                    if(tod6 !== null){
+                        this.act6.html(tod6);
+                        this.date6.html(toDate6);
+                        this.act6.show();
+                        this.date6.show();
+                    }
+        
+                    if(tod7 !== null){
+                        this.act7.html(tod7);
+                        this.date7.html(toDate7);
+                        this.act7.show();
+                        this.date7.show();
+                    }
+        
+                    if(tod8 !== null){
+                        this.act8.html(tod8);
+                        this.date8.html(toDate8);
+                        this.act8.show();
+                        this.date8.show();
+                    }
+        
+                    if(tod9 !== null){
+                        this.act9.html(tod9);
+                        this.date9.html(toDate9);
+                        this.act9.show();
+                        this.date9.show();
+                    }
+        
+                    if(tod10 !== null){
                         this.act10.html(tod10);
                         this.date10.html(toDate10);
                         this.act10.show();
                         this.date10.show();
-                        y = 580;
-                        console.log(mouseNo,y)
                     }
+
+
+                    
+                    
+
+
+
+                    
 
                     this.updateToDoList();
 
@@ -517,8 +654,8 @@ class ToDoList{
     }
 
     displayReadStuff(){
-        if(readTheList === true){
-            for(var x = 1; x<= determinerNumber ; x++){
+        //if(readTheList === true){
+            for(var x = 1; x<= mouseNo ; x++){
                 if(x===1){
                     this.act1.html(tod1);
                     this.date1.html(toDate1)
@@ -572,7 +709,11 @@ class ToDoList{
                     this.date10.html(toDate10)
                 }
             }
-        }
+        //}
+    }
+
+    show(){
+        this.toDoButton.show();
     }
 
 /*
@@ -584,10 +725,7 @@ class ToDoList{
     });
     }
 
-    show(){
-        this.toDoButton.show();
-        //this.dateInputList.hide();
-    }
+   
 
     getValue(){
         var toDoRef = database.ref('ToDo/' + mouseNo);

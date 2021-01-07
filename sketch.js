@@ -50,19 +50,28 @@ var subjectDetail4 = null;
 var subjectDetail5 = null;
 var subjectDetail6 = null;
 
-var tod1;
-var tod2;
-var tod3;
-var tod4;
-var tod5;
-var tod6;
-var tod7;
-var tod8;
-var tod9;
-var tod10;
+var tod1 = null;
+var tod2 = null;
+var tod3 = null;
+var tod4 = null;
+var tod5 = null;
+var tod6 = null;
+var tod7 = null;
+var tod8 = null;
+var tod9 = null;
+var tod10 = null;
 
-var toDate1, toDate2, toDate3, toDate4, toDate5, toDate6; 
-var toDate7, toDate8, toDate9, toDate10;
+var toDate1= null;
+var toDate2 = null;
+var toDate3 = null;
+var toDate4 = null;
+var toDate5 = null;
+var toDate6 = null;
+var toDate7 = null;
+var toDate8 = null;
+var toDate9 = null;
+var toDate10 = null;
+
 
 var loginNumber = 1;
 var checkPass;
